@@ -130,9 +130,7 @@ if (mysqli_connect_errno($con))
 <div style="top-margin:10px">
 <img width="100%" src="http://i.imgur.com/CesevhY.png" alt='Create your own banner at mybannermaker.com!' border=0 /></a><br>
 </div>
-<h1 style="font-family: georgia;font-size:18px;text-align:center">Please continue with acceptance procedure by setting the Accepted option to yes/no and kindly add in your comments in the comments field.You can enlarge the images by clicking on them. </h1>
-
- <button id="next" style="float:right;">Next</button> 
+ <button id="next" style="float:right;margin-top:80px;background:#3185CD;color:#fff">Next</button> 
 <div id="dialog-modal" title="Wireframe" style="display: none;text-align:center"></div>
 <?php 
 	$result = mysqli_query($con,"SELECT * FROM screens");
@@ -144,7 +142,7 @@ if (mysqli_connect_errno($con))
   	$headerid = "header".$tablecount;
   	$itemquery = "select * from items where screen_id=".$row['screen_id'];
   	$itemresult = mysqli_query($con,$itemquery);
-  	echo "<h2 id=\"".$headerid."\" style=\"font-family: georgia;font-size:12px;text-align:center;margin-top:200;\">".$row['screen_name']."</h2>";
+  	echo "<h1 id=\"".$headerid."\" style=\"font-family: georgia; color: #8F8F8F; font-size:28px;text-align:center;top:50px\">".$row['screen_name']."</h2>";
   	echo "<table id=\"".$tableid."\" cellspacing=\"1\" class=\"tablesorter\">";
   	echo "<thead><tr><th >ITEM</th><th >NAME</th><th >SCREEN</th><th >ACCEPTED</th><th >COMMENTS</th></tr></thead>";
   	echo "<tbody>";
@@ -152,7 +150,7 @@ if (mysqli_connect_errno($con))
   		while($itemrow = mysqli_fetch_assoc($itemresult))
   		{
   			
-  			echo "<tr><td class=\"image\" id=\"".$itemrow['item_name']." \" align=\"center\"> <img src=\"images/".$itemrow['item_name'].".png\" </img></td>";
+  			echo "<tr><td class=\"image\" id=\"".$itemrow['item_name']." \" align=\"center\"> <img src=\"images/".$itemrow['item_name'].".png\"> </img></td>";
   			echo "<td>".$namemappings[$itemrow['item_name']]."</td>";
   			echo "<td>".$row['screen_name']."</td>";
   			$savedresultsquery = "select accepted,comments from acceptanceresults where user_id=".$user_id." and item_id =".$itemrow['item_id'];
@@ -199,8 +197,10 @@ if (mysqli_connect_errno($con))
   	echo "</tbody></table>";
   	
   }
+ 
   mysqli_close($con);
 	?>
+	 <h4 style="font-family: timesnewroman;font-style:italic; font-size:18px;text-align:center">Note: Please continue with acceptance procedure by setting the Accepted option to yes/no and kindly add in your comments in the comments field.You can enlarge the images by clicking on them. </h1>
 <!-- <table id="maintable" cellspacing="1" class="tablesorter" >
 <thead>
 <tr>
