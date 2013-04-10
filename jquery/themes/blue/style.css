@@ -7,11 +7,9 @@ table.tablesorter {
 	width: 100%;
 	text-align: left;
 	border:1px solid black;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 10px;
 	cellpadding:3px;
 	cellspacing:3px;
+	margin-top: 150px;
 	
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
@@ -30,11 +28,12 @@ table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 4px;
 	text-align:center;
+	font-weight:bold;
 	background-color:#F0F0F6;
 	vertical-align: top;
 }
 table.tablesorter tbody td:hover{
-	background-color:#3185CD;
+	background-color:#D1C7CB;
 }
 table.tablesorter tbody tr.odd td {
 	background-color:#F0F0F6;
