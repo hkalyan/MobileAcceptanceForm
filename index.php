@@ -87,13 +87,12 @@ if (mysqli_connect_errno($con))
 				modal: true,
 				resizable: false,
 				draggable: false,
-				width: 'auto',
-					width: 600,
-					height: 400,
+				width: '800',
+				height: '600',
 					open: function(event, ui)
 					{
 						var img = $('<img ></img>');
-						var imgsrc = 'images/'+eventid+'.png';
+						var imgsrc = 'images/'+$.trim(eventid)+'zoom.png';
 						//img.attr('src','images/userinformationinputzoom.png');
 						img.attr('src',imgsrc);
 						$(this).html(img);
@@ -150,7 +149,7 @@ if (mysqli_connect_errno($con))
   		while($itemrow = mysqli_fetch_assoc($itemresult))
   		{
   			
-  			echo "<tr><td class=\"image\" id=\"".$itemrow['item_name']." \" align=\"center\"> <img src=\"images/".$itemrow['item_name'].".png\"> </img></td>";
+  			echo "<tr><td class=\"image\" id=\"".$itemrow['item_name']." \" align=\"center\"> <img src=\"images/".$itemrow['item_name'].".png\" width=> </img></td>";
   			echo "<td>".$namemappings[$itemrow['item_name']]."</td>";
   			echo "<td>".$row['screen_name']."</td>";
   			$savedresultsquery = "select accepted,comments from acceptanceresults where user_id=".$user_id." and item_id =".$itemrow['item_id'];
